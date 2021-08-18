@@ -438,7 +438,7 @@ footer {
 .footer-column a:hover {
     text-decoration: underline;
 }
-@media screen and (max-width: 600px) {
+@media screen and (min-width: 300px) {
     main {
         padding: unset;
     }
@@ -494,6 +494,10 @@ footer {
         border-bottom-left-radius: 15px;
         cursor: pointer;
     }
+    .search-input {
+        width: 150px;
+        font-size: 1rem;
+    }
     .hostings-container {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(2, 1fr) 0.5fr repeat(6, 1fr);    
@@ -508,7 +512,7 @@ footer {
     }
     .hostings-category {
         grid-area: 4 / 1 / 10 / 2;
-        background: none;
+        background: unset;
         border-radius: unset;
     }
     .hostings-grid {
@@ -549,5 +553,204 @@ footer {
     }
     .footer-column {
         padding-bottom: unset;
+    }
+}
+@media screen and (min-width: 350px) {
+    .search-input {
+        width: 200px;
+    }
+}
+@media screen and (min-width: 400px) {
+    .search-input {
+        width: 250px;
+    }
+}
+@media screen and (min-width: 700px) {
+    main {
+        padding: 0px 30px;
+    }
+    .search-container,
+    .activities-container {
+        padding: unset;
+    }
+    .nav-bar {
+        display: grid; 
+        grid-template-columns: 6fr repeat(3, 1fr); 
+        grid-template-rows: 1fr;
+    }
+    .nav-menu {
+        display: flex;
+        align-items: center;
+    }
+    .item-1 {
+        grid-area: 1 / 1 / 2 / 2;
+    }
+    .item-2 {
+        grid-area: 1 / 2 / 2 / 3;
+    }
+    .item-3 {
+        grid-area: 1 / 3 / 2 / 4;
+    }
+    .item-4 {
+        grid-area: 1 / 4 / 2 / 5;
+    }
+    .nav-link {
+        width: 100%;
+        text-align: center;
+        padding: 30px 30px;
+    }
+    .logo {
+        padding: 0px 30px;
+    }
+    .active {
+        color: #0065FC;
+        border-top: 3px solid #0065FC;
+        border-bottom: 3px solid #ffffff00;
+    }
+    .inactive {
+        border-top: 3px solid #ffffff00;
+        border-bottom: 3px solid #ffffff00;
+    }
+    .inactive:hover {
+        color: #0065FC;
+        border-top: 3px solid #0065FC;
+        border-bottom: 3px solid #ffffff00;
+    }
+    .register {
+        font-weight: 600;
+        color: #0065FC;
+        border-top: 3px solid #ffffff00;
+        border-bottom: 3px solid #ffffff00;
+    }
+    .icon-button {
+        display: none;
+    }
+    .text-button {
+        all: unset;
+        height: 100%;
+        width: 120px;
+        background-color: #0065FC;
+        font-size: 1.2rem;
+        color: white;
+        font-weight: 600;
+        padding-left: 15px;
+        cursor: pointer;
+    }
+    .hostings-container {
+        grid-template-columns: 1fr; 
+        grid-template-rows: repeat(2, 1fr) 0.2fr repeat(3, 1fr); 
+        grid-row-gap: 40px;   
+        margin-bottom: 40px;
+    }
+    .popular-category {
+        grid-area: 1 / 1 / 4 / 2;
+        border-radius: 20px;
+    }
+    .hostings-category {
+        grid-area: 4 / 1 / 7 / 2;
+        background-color: #F2F2F2;
+        border-radius: 20px;
+    }
+    .hostings-grid {
+        grid-template-columns: repeat(2, 1fr); 
+        grid-template-rows: repeat(3, 1fr); 
+    }
+    .activities-grid {
+        grid-template-columns: repeat(2, 1fr); 
+        grid-template-rows: repeat(3, 1fr);
+        height: unset;
+    }
+    .activity-cards {
+        height: 195px;
+    }
+    .card-1 {
+        grid-area: 1 / 1 / 2 / 2;
+    }
+    .card-2 {
+        grid-area: 1 / 2 / 2 / 3;
+    }
+    .card-3 {
+        grid-area: 2 / 1 / 3 / 2;
+    }
+    .card-4 {
+        grid-area: 2 / 2 / 3 / 3;
+    }
+    .card-5 {
+        grid-area: 3 / 1 / 4 / 2;
+    }
+    .card-6 {
+        grid-area: 3 / 2 / 4 / 3;
+    }
+    .footer-container {
+        max-width: 1350px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0px 30px;
+    }
+    .footer-container {
+        flex-direction: row;
+        padding-bottom: unset;
+    }
+    .footer-column {
+        padding: 40px 40px 40px 0px;
+    }
+    @media screen and (min-width: 1000px) {
+        .hostings-container {
+            grid-template-columns: repeat(9, 1fr);
+            grid-template-rows: 1fr;
+        }
+        .hostings-category {
+            grid-area: 1 / 1 / 2 / 7;
+        }
+        .hostings-grid {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 1fr;
+            grid-row-gap: 30px;
+        }
+        .popular-category {
+            grid-area: 1 / 7 / 2 / 10;
+        }
+        .popular-grid {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(3, 1fr);
+            grid-row-gap: 30px; 
+        }
+        .activities-grid {
+            grid-template-columns: repeat(8, 1fr); 
+            grid-template-rows: repeat(5, 1fr); 
+            grid-gap: 40px;
+            height: 430px; 
+        }
+        .activity-cards {
+            position: relative;
+            width: auto;
+            height: 100%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.26);
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            -webkit-transition: .3s ease-in-out;
+            transition: .3s ease-in-out;
+            overflow: hidden;
+            border-radius: 20px;
+        }
+        .card-1 {
+            grid-area: 1 / 1 / 6 / 3;
+        }
+        .card-2 {
+            grid-area: 1 / 3 / 4 / 5;
+        }
+        .card-3 {
+            grid-area: 4 / 3 / 6 / 5; 
+        }
+        .card-4 {
+            grid-area: 1 / 5 / 6 / 7;
+        }
+        .card-5 {
+            grid-area: 1 / 7 / 3 / 9;
+        }
+        .card-6 {
+            grid-area: 3 / 7 / 6 / 9;
+        }
     }
 }
