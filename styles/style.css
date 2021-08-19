@@ -90,7 +90,7 @@ main {
 }
 .pin-container {
     height: 100%;
-    width: 50px;
+    min-width: 50px;
     background-color: #F2F2F2;
 }
 .pin-icon {
@@ -102,7 +102,7 @@ main {
 .search-input {
     all: unset;
     height: 100%;
-    width: 250px;
+    width: 100%;
     font-size: 1.2rem;
     padding-left: 15px;
 }
@@ -113,7 +113,7 @@ main {
 .text-button {
     all: unset;
     height: 100%;
-    width: 120px;
+    min-width: 120px;
     background-color: #0065FC;
     font-size: 1.2rem;
     color: white;
@@ -438,6 +438,24 @@ footer {
 .footer-column a:hover {
     text-decoration: underline;
 }
+@media screen and (max-width: 1200px) {
+    .hostings-container {
+        grid-template-columns: 1fr; 
+        grid-template-rows: 0.5fr 1fr; 
+        grid-row-gap: 40px;  
+    }
+    .popular-category {
+        grid-area: 1 / 1 / 2 / 2;
+    }
+    .popular-grid {
+        grid-template-columns: repeat(3, 1fr); 
+        grid-template-rows: 1fr; 
+        grid-column-gap: 30px;
+    }
+    .hostings-category {
+        grid-area: 2 / 1 / 3 / 2;
+    }
+}
 @media screen and (max-width: 1000px) {
     .hostings-container {
         grid-template-columns: 1fr; 
@@ -448,6 +466,10 @@ footer {
     .popular-category {
         grid-area: 1 / 1 / 4 / 2;
         border-radius: 20px;
+    }
+    .popular-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr); 
     }
     .hostings-category {
         grid-area: 4 / 1 / 7 / 2;
@@ -498,6 +520,9 @@ footer {
         grid-template-rows: repeat(2, 1fr);
         margin-bottom: 30px;
     }
+    .search-bar {
+        max-width: 100%;
+    }
     .item-1 {
         grid-area: 1 / 1 / 2 / 2;
     }
@@ -531,7 +556,7 @@ footer {
     .icon-button {
         all: unset;
         height: 100%;
-        width: 50px;
+        min-width: 50px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -541,12 +566,10 @@ footer {
         border-bottom-left-radius: 15px;
         cursor: pointer;
     }
-    .search-input {
-        width: 250px;
-    }
     .hostings-container {
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(2, 1fr) 0.5fr repeat(6, 1fr);    
+        grid-template-rows: repeat(2, 1fr) 0.5fr repeat(6, 1fr);
+        grid-row-gap: 0;  
         margin-bottom: 10px;
     }
     .popular-category {
@@ -560,6 +583,7 @@ footer {
         grid-area: 4 / 1 / 10 / 2;
         background: unset;
         border-radius: unset;
+        grid-row-gap: unset
     }
     .hostings-grid {
         grid-template-columns: 1fr;
@@ -601,14 +625,8 @@ footer {
         padding-bottom: unset;
     }
 }
-@media screen and (max-width: 400px) {
-    .search-input {
-        width: 200px;
-    }
-}
 @media screen and (max-width: 350px) {
     .search-input {
-        width: 150px;
         font-size: 1rem;
     }
 }
